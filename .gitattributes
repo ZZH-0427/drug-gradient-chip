@@ -1,0 +1,2 @@
+# Preserve reviewed bytes; gradlew is already LF and has executable Git mode.
+* -text

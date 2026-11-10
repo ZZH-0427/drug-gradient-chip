@@ -1,0 +1,3 @@
+# Copy to local.properties and set a real SDK directory locally; never commit that file.
+# Use forward slashes or Java-properties escaping on Windows.
+sdk.dir=/path/to/Android/Sdk

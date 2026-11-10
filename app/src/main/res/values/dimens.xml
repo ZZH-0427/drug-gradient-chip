@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="shell_header_height">54dp</dimen>
+    <dimen name="shell_navigation_width">112dp</dimen>
+    <dimen name="workspace_gap">10dp</dimen>
+    <dimen name="panel_padding">12dp</dimen>
+    <dimen name="panel_radius">8dp</dimen>
+    <dimen name="touch_target">48dp</dimen>
+</resources>

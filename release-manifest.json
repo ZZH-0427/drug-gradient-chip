@@ -1,0 +1,82 @@
+{
+  "schema_version": 2,
+  "project_name": "智能药物浓度预测平台",
+  "release_version": "v0.4.0-rc1",
+  "release_channel": "pre-release",
+  "release_status": "debug-testing",
+  "release_record_type": "curated standalone Android source snapshot with existing binary provenance",
+  "tag_name": "v0.4.0-rc1",
+  "tag_semantics": "Annotated release tag targeting this independent Android source repository commit",
+  "metadata_history": {
+    "branch": "main",
+    "root_commit_without_parents": true,
+    "android_source_included": true,
+    "complete_original_research_history_included": false,
+    "previous_binary_only_history_included": false
+  },
+  "application": {
+    "application_id": "com.druggradientchip.android",
+    "version_name": "0.4.0-rc1",
+    "version_code": 4,
+    "languages": [
+      "en",
+      "zh-CN"
+    ],
+    "features": [
+      "Forward",
+      "Reverse",
+      "Assistant"
+    ],
+    "inference": "local ExecuTorch"
+  },
+  "apk": {
+    "file_name": "智能药物浓度预测平台-Android-v0.4.0-rc1-debug.apk",
+    "size_bytes": 59657335,
+    "sha256": "3ced38ae1b725c02d4b088c3d1fd0afa4f16763dce1e212b3881f78b301dc464",
+    "checksum_file_name": "智能药物浓度预测平台-Android-v0.4.0-rc1-debug.apk.sha256",
+    "signing_type": "Android Debug self-signed certificate",
+    "production_signed": false,
+    "production_stable_release": false,
+    "existing_debug_signature_preserved": true,
+    "required_pte_models_embedded": 7
+  },
+  "validation": {
+    "this_preparation": "Static source/allowlist review, independent Git history verification and existing APK SHA256 check only; no build or application/model/device test execution",
+    "application_or_model_execution_performed": false,
+    "rebuild_performed": false,
+    "resigning_performed": false,
+    "functional_test_results": "Prior results belong to historical validation on the old computer; not rerun in this preparation"
+  },
+  "source_provenance": {
+    "historical_android_development_commit": "f46b1c826521b52937e9995e257d85028ef4027e",
+    "relationship": "Provenance only, not a parent or tag target; android/ normalized to repository root",
+    "strict_reproducible_apk_to_source_commit_binding_established": false,
+    "curation": "Excluded ten research-fixture-dependent files; sanitized two form example defaults; replaced documentation and local-configuration examples"
+  },
+  "scope_exclusions": [
+    "Original development Git history",
+    "Previous binary-only Git history",
+    "Standalone PTE/PT/PTH weights and model bundles",
+    "Experimental model-output Golden JSON and embedded Golden Kotlin fixtures",
+    "Scientific training data and research reports",
+    "Conda environments and build caches",
+    "Signing keys and credentials",
+    "APK and other build binaries in Git"
+  ],
+  "prepared_at": "2026-11-10T23:47:44+08:00",
+  "timezone": "Asia/Singapore",
+  "publication_performed": false,
+  "repository": "https://github.com/ZZH-0427/drug-gradient-chip-android",
+  "publication_scope": {
+    "private_model_files_in_git": false,
+    "training_data_in_git": false,
+    "experimental_tensor_json_in_git": false,
+    "preprocessing_constants_in_source": true,
+    "feature_and_search_algorithms_in_source": true,
+    "synthetic_parser_fixture_included": "app/src/test/resources/assistant_golden_corpus.json",
+    "selected_unit_test_classes": 18,
+    "selected_instrumentation_test_classes": 2,
+    "models_required_for_fully_functional_rebuild": 7,
+    "owner_approval_required_before_public_push": true
+  }
+}

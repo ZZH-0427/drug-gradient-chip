@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/workspace_gap"
+    android:layout_weight="5"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@drawable/bg_panel"
+        android:orientation="vertical"
+        android:padding="@dimen/panel_padding">
+
+        <TextView
+            style="@style/TextAppearance.DrugChip.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reverse_configuration_title" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/reverse_description"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+
+        <ScrollView
+            android:id="@+id/reverseConfigurationScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:overScrollMode="ifContentScrolls">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="4dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    style="@style/TextAppearance.DrugChip.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/high_inlet_label" />
+
+                <RadioGroup
+                    android:id="@+id/highInletGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/touch_target"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/inlet1HighOption"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/inlet1_high" />
+
+                    <RadioButton
+                        android:id="@+id/inlet2HighOption"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/inlet2_high" />
+                </RadioGroup>
+
+                <TextView
+                    style="@style/TextAppearance.DrugChip.SectionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/target_concentrations_title" />
+
+                <LinearLayout
+                    android:id="@+id/reverseTargetContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancelReverseButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="140dp"
+                android:layout_height="@dimen/touch_target"
+                android:layout_marginEnd="10dp"
+                android:enabled="false"
+                android:text="@string/cancel_reverse"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/runReverseButton"
+                style="@style/Widget.DrugChip.PrimaryButton"
+                android:layout_width="190dp"
+                android:text="@string/run_reverse" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/workspace_gap"
+        android:layout_weight="2"
+        android:background="@drawable/bg_panel"
+        android:orientation="vertical"
+        android:padding="@dimen/panel_padding">
+
+        <TextView
+            style="@style/TextAppearance.DrugChip.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reverse_result_title" />
+
+        <TextView
+            android:id="@+id/reverseStatusText"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_status_ready"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/reverse_ready"
+            android:textColor="@color/status_ready_text"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/reverseProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/reverseProgressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:id="@+id/reverseResultScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:overScrollMode="ifContentScrolls">
+
+            <LinearLayout
+                android:id="@+id/reverseResultContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reverseResultMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reverse_result_empty"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:id="@+id/reverseResultDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/reverseQualityText"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/reverseSummaryText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/reverseMetricsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_result_header"
+                        android:padding="10dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        style="@style/TextAppearance.DrugChip.SectionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:text="@string/candidate_chips_title" />
+
+                    <LinearLayout
+                        android:id="@+id/reverseChipResults"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

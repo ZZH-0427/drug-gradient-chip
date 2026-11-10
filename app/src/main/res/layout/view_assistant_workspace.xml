@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/workspace_gap"
+    android:layout_weight="1"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@drawable/bg_panel"
+        android:orientation="vertical"
+        android:padding="@dimen/panel_padding">
+
+        <TextView
+            style="@style/TextAppearance.DrugChip.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/assistant_command_title" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/assistant_description"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+
+        <ScrollView
+            android:id="@+id/assistantHistoryScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:overScrollMode="ifContentScrolls">
+
+            <LinearLayout
+                android:id="@+id/assistantHistoryContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="4dp"
+                android:paddingBottom="8dp" />
+        </ScrollView>
+
+        <EditText
+            android:id="@+id/assistantCommandInput"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:gravity="top|start"
+            android:hint="@string/assistant_command_hint"
+            android:imeOptions="actionSend"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="3"
+            android:minLines="2"
+            android:padding="10dp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_muted"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/assistantSendButton"
+                style="@style/Widget.DrugChip.PrimaryButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/assistant_send" />
+
+            <Button
+                android:id="@+id/assistantHelpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/touch_target"
+                android:layout_marginStart="6dp"
+                android:minWidth="64dp"
+                android:text="@string/assistant_help"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/assistantResetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/touch_target"
+                android:layout_marginStart="4dp"
+                android:minWidth="64dp"
+                android:text="@string/assistant_reset"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/workspace_gap"
+        android:layout_weight="4"
+        android:background="@drawable/bg_panel"
+        android:orientation="vertical"
+        android:padding="@dimen/panel_padding">
+
+        <TextView
+            style="@style/TextAppearance.DrugChip.SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/assistant_task_title" />
+
+        <TextView
+            android:id="@+id/assistantStatusText"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_status_ready"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/assistant_status_ready"
+            android:textColor="@color/status_ready_text"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/assistantDetailScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:overScrollMode="ifContentScrolls">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="4dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/assistantModeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/assistant_no_active_draft"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/assistantActiveChipText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/brand_blue"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/assistantDraftContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/assistantMissingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_status_warning"
+                    android:padding="10dp"
+                    android:textColor="@color/status_warning_text"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/assistantStaleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_status_warning"
+                    android:padding="10dp"
+                    android:text="@string/assistant_result_stale"
+                    android:textColor="@color/status_warning_text"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/assistantProgressGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/assistantProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="16dp"
+                        android:layout_weight="1"
+                        android:max="100" />
+
+                    <TextView
+                        android:id="@+id/assistantProgressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/assistantResultContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/assistantCancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/touch_target"
+                android:enabled="false"
+                android:text="@string/assistant_cancel"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/assistantContinueButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/touch_target"
+                android:layout_marginStart="6dp"
+                android:text="@string/assistant_continue_editing"
+                android:textAllCaps="false"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/assistantConfirmButton"
+                style="@style/Widget.DrugChip.PrimaryButton"
+                android:layout_width="180dp"
+                android:layout_marginStart="6dp"
+                android:text="@string/assistant_confirm_run"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

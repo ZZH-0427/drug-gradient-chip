@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="shell_navigation_width">144dp</dimen>
+    <dimen name="workspace_gap">14dp</dimen>
+    <dimen name="panel_padding">18dp</dimen>
+</resources>

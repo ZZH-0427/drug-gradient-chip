@@ -1,0 +1,20 @@
+[
+  {"id":"forward_simple_en","message":"Run a forward prediction with 6 chips and Inlet1 high.","command":"FORWARD_UPDATE"},
+  {"id":"forward_multi_chip_zh","message":"做6个芯片正向预测，入口1为高浓度；第一个用5to4，左宽0.261，右宽0.138，左距21，右距15；第二个用4-2，左宽0.089，右宽0.04，左距25，右距13","command":"FORWARD_UPDATE"},
+  {"id":"forward_mixed_en","message":"Forward with 4 chips, Inlet2 high; chip 1 structure 4 to 2, left width 0.089, right width 0.04, left distance 25, right distance 13","command":"FORWARD_UPDATE"},
+  {"id":"context_start_zh","message":"第二个用4to2","command":"FORWARD_UPDATE"},
+  {"id":"context_continue_zh","message":"左宽0.089，右宽0.04，左距25，右距13","command":"FORWARD_UPDATE"},
+  {"id":"ordinal_en","message":"Set the right width of the second chip to 0.18","command":"FORWARD_UPDATE"},
+  {"id":"negative_width","message":"chip 1 left width -0.1","command":"FORWARD_UPDATE_INVALID"},
+  {"id":"reverse_en","message":"Reverse prediction: target concentrations are 0.08 0.14 0.25 0.38 0.48 0.58, with Inlet2 high.","command":"REVERSE_UPDATE"},
+  {"id":"reverse_inlet_before","message":"Inlet1 high, reverse target concentrations are 0.08 0.14 0.25 0.38 0.48 0.58","command":"REVERSE_UPDATE"},
+  {"id":"reverse_tail_inlet_zh","message":"目标浓度分别是0.08、0.14、0.25、0.38、0.48、0.58，入口2为高浓度","command":"REVERSE_UPDATE"},
+  {"id":"reverse_missing_inlet","message":"目标浓度是0.08 0.14 0.25 0.38 0.48 0.58","command":"REVERSE_UPDATE_INCOMPLETE"},
+  {"id":"reverse_wrong_count","message":"target concentrations are 0.1 0.2 0.3 0.4 0.5","command":"REVERSE_UPDATE_INVALID"},
+  {"id":"ambiguous_position","message":"chip 1 and chip 2 left width 0.18","command":"CLARIFY"},
+  {"id":"malformed_number","message":"chip 1 left width 0..1","command":"CLARIFY"},
+  {"id":"reset","message":"reset","command":"RESET"},
+  {"id":"help","message":"help","command":"HELP"},
+  {"id":"confirm","message":"confirm","command":"CONFIRM_AND_RUN"},
+  {"id":"cancel","message":"cancel","command":"CANCEL"}
+]
